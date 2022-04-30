@@ -34,13 +34,13 @@ $(document).on("click", ".likeButton", (event) => {
     var button = $(event.target);
     var postId = getPostIdFromElement(button);
 
-    if(postId == undefined){return;}
+    if(postId === undefined){return;}
 
     $.ajax({
         url: `/api/posts/${postId}/like`,
         type: "PUT",
         success: (postData) => {
-            console.log(postData);
+            console.log(postData.likes.length)
         }
     })
 })
