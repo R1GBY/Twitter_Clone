@@ -132,9 +132,10 @@ function createPostHtml(postData){
                         <div class='postBody'>
                             <span>${postData.content}</span>
                         </div>
+                        
                         <div class='postFooter'>
                             <div class='postButtonContainer'> 
-                                <button>
+                                <button data-bs-toggle='modal' data-bs-target='#replyModal'>
                                     <i class="fa-solid fa-comment"></i>
                                 </button>
                             </div>
