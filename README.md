@@ -1,2 +1,3 @@
 # Twitter_Clone
-I am planning to create a twitter-like social media for the Web Programming (BLM3006) Lecture of Marmara University.
+A Twitter-like Social Media using HTML-CSS-JS, NodeJs, MongoDB
+![](https://github.com/R1GBY/Twitter_Clone/blob/main/homepage.gif)
