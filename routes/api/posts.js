@@ -24,12 +24,17 @@ router.get("/", async (req, res, next) => {
     }) */
 
     var results = await getPosts();
-    console.log(results);
     res.status(200).send(results);    
 })
 
- router.get("/:id", (req, res, next) => {
+ router.get("/:id", async (req, res, next) => {
 
+    var postId = req.params.id;
+
+    var results = await getPosts({ _id: postId });
+    results = results[0];
+    
+    res.status(200).send(results);    
 }) 
 
 router.post('/', async(req, res, next) => {
@@ -119,8 +124,8 @@ router.post('/:id/retweet', async(req, res, next) => {
     res.status(200).send(post);
 })
 
-async function getPosts() {
-    var results = await Post.find()
+async function getPosts(filter) {
+    var results = await Post.find(filter)
     .populate("postedBy")
     .populate("retweetData")
     .sort({"createdAt": -1})
