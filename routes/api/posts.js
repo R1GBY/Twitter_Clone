@@ -39,6 +39,11 @@ router.get("/", async (req, res, next) => {
 
 router.post('/', async(req, res, next) => {
 
+    if(req.body.replyTo){
+        console.log(req.body.replyTo);
+        return res.sendStatus(400);
+    }
+
     if(!req.body.content){
         console.log("Content param not sent with request");
         return res.sendStatus(400);      
